@@ -113,6 +113,14 @@ export const BUTTONS = [
 
 export const SETTINGS_SCHEMA: SettingSchemaDesc[] = [
   {
+    key: "customRepoRoot",
+    title: "Custom Repository Root Path",
+    type: "string",
+    default: "/",
+    description:
+      "Custom repository root, relative to the current graph root (can contain `..` path nodes). Defaults to /, which means the graph root.",
+  },
+  {
     key: "buttons",
     title: "Buttons",
     type: "enum",
@@ -150,13 +158,19 @@ export const SETTINGS_SCHEMA: SettingSchemaDesc[] = [
     default: "Default Message With Date",
     description: "Type of commit message to use",
     enumPicker: "select",
-    enumChoices: ['Custom Message' , 'Default Message', 'Custom Message With Date', 'Default Message With Date'],
+    enumChoices: [
+      "Custom Message",
+      "Default Message",
+      "Custom Message With Date",
+      "Default Message With Date",
+    ],
   },
   {
     key: "customCommitMessage",
     title: "Custom Commit Message",
     type: "string",
     default: "",
-    description: "Custom commit message for plugin (valid only if commit message is set to Custom Message)",
-  }
+    description:
+      "Custom commit message for plugin (valid only if commit message is set to Custom Message)",
+  },
 ];
